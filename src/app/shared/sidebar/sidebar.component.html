@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <button *ngIf="userRole === 'Teacher'" (click)="select('student-register')">➕ Register Student</button>
+    <button *ngIf="userRole === 'Teacher'" (click)="select('student-list')">📋 View Students</button>
+    <button *ngIf="userRole === 'Teacher'" (click)="select('test-create')">📝 Create Test</button>
+    <button *ngIf="userRole === 'Teacher'" (click)="select('test-list')">📘 View Tests</button>
+    
+    <button *ngIf="userRole === 'Administrator' || userRole === 'Principal'" (click)="select('user-list')">📋 View Pending Users</button>  
+    <button *ngIf="userRole === 'Administrator' || userRole === 'Principal'" (click)="select('parent-create')">👨‍👩‍👧 Create Parent Account</button>
+</div>
+  

@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/" class="logo">Mathoria</a>
+  </div>
+
+  <div class="navbar-right" *ngIf="isLoggedIn">
+    <button class="gear-button" (click)="toggleMenu()">⚙</button>
+    <div class="dropdown" *ngIf="menuOpen">
+      <button (click)="logout()">Log Out</button>
+    </div>
+  </div>
+</nav>
+
+  

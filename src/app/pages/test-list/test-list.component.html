@@ -1,0 +1,16 @@
+<h2>Your Tests</h2>
+
+<label>Filter by Grade:</label>
+<select [(ngModel)]="selectedGrade" (change)="applyFilter()">
+  <option value="">All Grades</option>
+  <option *ngFor="let grade of grades" [value]="grade">Grade {{ grade }}</option>
+</select>
+
+<ul>
+  <li *ngFor="let test of filteredTests">
+    📘 <strong>{{ test.testName }}</strong> - Grade {{ test.grade }} (⏱ {{ test.testDuration }} mins)
+    <button (click)="editTest(test.testId)" style="margin-left: 10px; background: #3f51b5; color: white; padding: 6px 12px; border-radius: 4px;">Modifier</button>
+  </li>
+</ul>
+
+<div *ngIf="filteredTests.length === 0">No tests found.</div>

@@ -1,0 +1,49 @@
+<h2>{{ isEditMode ? 'Edit Test' : 'Create a New Test' }}</h2>
+
+<form [formGroup]="testForm" (ngSubmit)="submitTest()">
+  <label>Title</label>
+  <input type="text" formControlName="title" placeholder="Test title" />
+
+  <label>Classroom</label>
+  <select formControlName="classroomId">
+    <option *ngFor="let grade of gradeLevels" [value]="grade">
+      {{ grade }}
+    </option>
+  </select>
+
+  <label>Test Duration (minutes)</label>
+  <input type="number" formControlName="testDuration" />
+
+  <hr />
+
+  <label>Select Mini-Games</label>
+  <div *ngFor="let game of allMiniGames">
+    <label>
+      <input
+        type="checkbox"
+        [checked]="selectedMiniGames.includes(game.id)"
+        (change)="onCheckboxChange($event, game.id)"
+      />
+      {{ game.title }}
+    </label>
+  </div>
+
+  <hr />
+
+  <div formGroupName="miniGameConfigs">
+    <div *ngFor="let gameId of selectedMiniGames">
+      <h4>{{ gameId.replace('_', ' ') | titlecase }} Config</h4>
+      <div [formGroupName]="gameId">
+        <div *ngFor="let key of testForm.get('miniGameConfigs')?.get(gameId)?.value | keyvalue">
+          <label>{{ key.key }}</label>
+          <input
+            type="text"
+            [formControlName]="getKey(key)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">{{ isEditMode ? 'Update Test' : 'Save Test' }}</button>
+</form>

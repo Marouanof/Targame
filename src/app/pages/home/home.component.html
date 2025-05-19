@@ -1,0 +1,19 @@
+<app-nav-bar></app-nav-bar>
+<div class="home-container">
+  <h1>Bienvenue sur le portail universitaire</h1>
+  <p>Accédez à votre espace, explorez, et suivez votre travail.</p>
+
+  <div *ngIf="showLogin">
+    <app-login></app-login>
+  </div>
+
+  <div *ngIf="showRegister">
+    <app-register></app-register>
+  </div>
+
+  <div class="buttons">
+    <a (click)="showLogin = !showLogin" class="btn">Se connecter</a>
+    <a (click)="showRegister = !showRegister" class="btn btn-secondary">S'inscrire</a>
+  </div>
+</div>
+

@@ -1,0 +1,87 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e3a59;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  position: relative;
+}
+
+.navbar-left .logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-left .logo:hover {
+  color: #a0c4ff;
+}
+
+.navbar-right {
+  position: relative;
+}
+
+.gear-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.gear-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 120px;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+  background-color: #eee;
+}
+
+.guest-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #a0c4ff;
+}
+
+  

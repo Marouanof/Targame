@@ -1,0 +1,32 @@
+<div class="student-list">
+  <h2>Student List</h2>
+
+  <div *ngIf="loading">Loading students...</div>
+  <div *ngIf="!loading && students.length === 0">No students found.</div>
+
+  <div *ngIf="!loading && students.length > 0">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search by name, grade, gender..."
+        [(ngModel)]="searchTerm"
+        (input)="filterStudents()"
+        class="search-bar"
+      />
+    </div>
+
+    <div class="student-cards">
+      <div class="student-card" *ngFor="let student of filteredStudents">
+        <p><strong>First Name:</strong> {{ student.firstName }}</p>
+        <p><strong>Last Name:</strong> {{ student.lastName }}</p>
+        <p><strong>Birth Date:</strong> {{ student.birthday || 'N/A' }}</p>
+        <p><strong>Grade:</strong> {{ student.schoolGrade }}</p>
+        <p><strong>Gender:</strong> {{ student.gender }}</p>
+        <button (click)="unlinkStudent(student.uid)">Unlink</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  

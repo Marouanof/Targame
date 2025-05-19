@@ -1,0 +1,75 @@
+.student-registration {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9fb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.student-registration h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.student-form label {
+  font-weight: bold;
+  color: #555;
+}
+
+.student-form input,
+.student-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.student-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student-form button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.student-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+  
